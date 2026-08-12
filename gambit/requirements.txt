@@ -1,0 +1,17 @@
+# Extra dependencies for the Gambit evaluation and scorer-training scripts.
+# These are NOT pulled in by installing the engine itself:
+#   pip install -r gambit/requirements.txt
+
+# Answer checking (gambit/tests/evaluator.py)
+latex2sympy2
+word2number
+sympy
+# Required by sympy.parsing.latex; without it LaTeX answer parsing silently
+# degrades to weaker fallbacks (evaluator.py catches the ImportError).
+antlr4-python3-runtime==4.11
+regex
+
+# Scorer training (gambit/train_scorer/)
+scikit-learn
+matplotlib
+seaborn
